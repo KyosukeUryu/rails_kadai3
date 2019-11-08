@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :pictures do
     collection do
       post :confirm
+      get :favor_pictures
     end
   end
 

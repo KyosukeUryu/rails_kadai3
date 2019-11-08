@@ -2,12 +2,10 @@
 
 <%= form_with(model: @picture, local: true, url: pictures_path) do |f| %>
   <%= image_tag @picture.image.url if @picture.image && @picture.image.url %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
   <%= f.hidden_field :image_cache %>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.hidden_field :content %>
+  <p>内容：<%= @picture.content %></p>
 
   <%= f.submit %>
   <%= f.submit '戻る', name: 'back' %>

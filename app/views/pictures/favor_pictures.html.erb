@@ -1,0 +1,7 @@
+<h2>あなたのお気に入り</h2>
+
+<% @pictures.each do |pic| %>
+  <%= image_tag pic.image.url %>
+  <p>内容：<%= pic.content %></p>
+  <p>投稿者：<%= pic.user.name %></p>
+<% end %>

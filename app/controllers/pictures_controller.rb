@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
+
   def index
     @pictures = Picture.all.order(created_at: :desc)
   end
@@ -42,6 +43,10 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+  end
+
+  def favor_pictures
+    @pictures = current_user.favor_pictures
   end
 
   private
