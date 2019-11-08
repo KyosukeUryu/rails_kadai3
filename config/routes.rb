@@ -6,4 +6,10 @@ Rails.application.routes.draw do
       get :tops
     end
   end
+
+  resources :pictures do
+    collection do
+      post :confirm
+    end
+  end
 end
