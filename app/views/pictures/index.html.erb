@@ -1,0 +1,6 @@
+<h2>みんなの投稿一覧</h2>
+
+<% @pictures.each do |pic| %>
+  <%= image_tag pic.image.url %>
+  <p>内容：<%= pic.content %></p>
+<% end %>
