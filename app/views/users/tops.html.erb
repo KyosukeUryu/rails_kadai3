@@ -1,2 +1,6 @@
 <h2>トップページ</h2>
 <h3>現在<%= @users.count %>人の方にユーザ登録いただいております！</h3>
+
+<% if logged_in? %>
+  <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？'} %>
+<% end %>
