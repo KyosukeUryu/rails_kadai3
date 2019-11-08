@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[show edit update]
   def tops
+    @users = User.all
   end
 
   def new
@@ -15,9 +17,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
