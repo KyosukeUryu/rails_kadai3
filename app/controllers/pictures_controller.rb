@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :set_picture, only: %i[show edit update destroy]
   def index
     @pictures = Picture.all.order(created_at: :desc)
   end
@@ -24,6 +25,8 @@ class PicturesController < ApplicationController
   end
 
   def update
+    @picture.update(picture_params)
+    redirect_to picture_path(@picture.id), notice: '更新しました！'
   end
 
   def destroy
@@ -36,6 +39,10 @@ class PicturesController < ApplicationController
 
   def picture_params
     params.require(:picture).permit(:image, :image_cache, :content)
+  end
+
+  def set_picture
+    @picture = Picture.find(params[:id])
   end
 
 end
