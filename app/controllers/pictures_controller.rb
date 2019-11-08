@@ -30,6 +30,8 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    @picture.destroy
+    redirect_to root_path, notice: '投稿を削除しました'
   end
 
   def confirm
