@@ -11,10 +11,14 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
-    if @picture.save
-      redirect_to root_path, notice: '投稿しました！'
+    if params[:back]
+      render :new
     else
-      render :new, notice: '投稿できませんでした'
+      if @picture.save
+        redirect_to root_path, notice: '投稿しました！'
+      else
+        render :new, notice: '投稿できませんでした'
+      end
     end
   end
 
@@ -35,6 +39,7 @@ class PicturesController < ApplicationController
   end
 
   def confirm
+    @picture = Picture.new(picture_params)
   end
 
   private
