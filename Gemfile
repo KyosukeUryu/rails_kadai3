@@ -28,6 +28,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 group :development do
