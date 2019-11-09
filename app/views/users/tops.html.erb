@@ -5,7 +5,14 @@
     	<li role="presentation"><%= link_to '投稿一覧', pictures_path %></li>
     	<li role="presentation"><%= link_to 'お気に入り一覧', favor_pictures_pictures_path %></li>
     </ul>
-    <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？'} %>
+    <div class="home-contents">
+      <%= image_tag "welcome.jpg", size: "400x300" %>
+      <h2><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+      お気に入りの画像を投稿しよう！</h2>
+      <%= link_to '新規投稿', new_picture_path, class: 'btn btn-primary' %>
+      <%= link_to 'プロフィール編集', edit_user_path(current_user.id), class: 'btn btn-warning' %>
+      <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, class: 'btn btn-danger', data: { confirm: 'ログアウトしますか？'} %>
+    </div>
   <% else %>
     <div class="jumbotron">
       <h2>早速<%= link_to 'ログイン', new_session_path %>しよう！</h2>

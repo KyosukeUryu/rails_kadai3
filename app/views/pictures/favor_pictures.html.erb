@@ -3,14 +3,17 @@
     <ul class="nav nav-tabs nav-justified">
     	<li role="presentation"><%= link_to 'ホーム', root_path %></li>
     	<li role="presentation"><%= link_to '投稿一覧', pictures_path %></li>
-    	<li role="presentation" class="active"><%= link_to 'あなたのお気に入り一覧', favor_pictures_pictures_path %></li>
+    	<li role="presentation" class="active"><%= link_to 'お気に入り一覧', favor_pictures_pictures_path %></li>
     </ul>
-    <% @pictures.each do |pic| %>
-      <%= image_tag pic.image.url %>
-      <p>内容：<%= pic.content %></p>
-      <p>投稿者：<%= pic.user.name %></p>
-    <% end %>
-    <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？'} %>
+    <div class="home-contents">
+      <% @pictures.each do |pic| %>
+        <div class="contents-pictures">
+          <%= image_tag pic.image.url %>
+          <p>内容：<%= link_to pic.content, picture_path(pic.id) %></p>
+          <p>投稿者：<%= pic.user.name %></p>
+        </div>
+      <% end %>
+    </div>
   <% else %>
     <div class="jumbotron">
       <h2>早速<%= link_to 'ログイン', new_session_path %>しよう！</h2>

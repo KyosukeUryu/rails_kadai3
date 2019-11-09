@@ -14,10 +14,12 @@
     </div>
   <% end %>
 
-  <div class="index">
+  <div class="home-contents">
     <% @pictures.each do |pic| %>
-      <%= image_tag pic.image.url %>
-      <p>内容：<%= pic.content %></p>
+      <div class="contents_pictures">
+        <%= image_tag pic.image.url %>
+        <p>内容：<%= link_to pic.content, picture_path(pic.id) %></p>
+      </div>
     <% end %>
     <%= paginate @pictures %>
   </div>
