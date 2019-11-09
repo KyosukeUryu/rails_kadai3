@@ -19,5 +19,6 @@
       <%= image_tag pic.image.url %>
       <p>内容：<%= pic.content %></p>
     <% end %>
+    <%= paginate @pictures %>
   </div>
 </div>
