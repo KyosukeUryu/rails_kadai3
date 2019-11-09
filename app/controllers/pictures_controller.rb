@@ -17,9 +17,9 @@ class PicturesController < ApplicationController
     else
       if @picture.save
         ConfirmMailer.confirm_mail(@picture).deliver
-        redirect_to root_path, notice: '投稿しました！'
+        redirect_to root_path, success: '投稿しました！'
       else
-        render :new, notice: '投稿できませんでした'
+        render :new, danger: '投稿できませんでした'
       end
     end
   end
@@ -36,12 +36,12 @@ class PicturesController < ApplicationController
 
   def update
     @picture.update(picture_params)
-    redirect_to picture_path(@picture.id), notice: '更新しました！'
+    redirect_to picture_path(@picture.id), info: '更新しました！'
   end
 
   def destroy
     @picture.destroy
-    redirect_to root_path, notice: '投稿を削除しました'
+    redirect_to root_path, danger: '投稿を削除しました'
   end
 
   def confirm

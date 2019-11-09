@@ -16,6 +16,11 @@
         <h1><%= link_to 'This is Insta 「もどき」', root_path, class: 'header-title' %></h1>
       </div>
     </header>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value.html_safe %>
+      </div>
+    <% end %>
     <section class="page-main">
       <div class="container">
         <div class="row">
