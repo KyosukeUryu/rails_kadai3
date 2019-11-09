@@ -2,8 +2,7 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
 
   def index
-    @pictures = Picture.all.order(created_at: :desc)
-    @pictures = Picture.page(params[:page]).per(5)
+    @pictures = Picture.page(params[:page]).per(5).order(created_at: :desc)
   end
 
   def new

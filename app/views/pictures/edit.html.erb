@@ -1,23 +1,5 @@
 <h2>画像の編集</h2>
 
-<% if @picture.errors.any? %>
-  <p><%= @picture.errors.count %>件のエラーがあります</p>
-  <ul>
-  <% @picture.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-<% end %>
-<%= form_with(model: @picture, local: true) do |f| %>
-  <%= image_tag @picture.image.url if @picture.image && @picture.image.url %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.hidden_field :image_cache %>
+<%= render 'form' %>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-
-  <%= f.submit %>
-<% end %>
-
-<%= link_to '削除する', picture_path(@picture.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+<%= link_to '削除する', picture_path(@picture.id), method: :delete, class: 'btn btn-danger', data: { confirm: '本当に削除しますか？' } %>
