@@ -1,0 +1,29 @@
+header {
+  background-image: image-url("background.jpg");
+  margin: 0;
+  height: 150px;
+}
+
+.page-header {
+  margin: 0;
+  height: 100%;
+}
+
+header h1 {
+  margin: 0 auto;
+  font-size: 5rem;
+  text-align: center;
+  padding-top: 50px;
+  font-style: oblique;
+  letter-spacing: 10px;
+}
+
+header h1 a {
+  display: block;
+  color: snow;
+}
+
+header h1 a:hover {
+  text-decoration: none;
+  color: antiquewhite;
+}

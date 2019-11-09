@@ -13,18 +13,20 @@
 
     <header>
       <div class="page-header">
-        <h1>トップページ！</h1>
+        <h1><%= link_to 'This is Insta 「もどき」', root_path, class: 'header-title' %></h1>
       </div>
     </header>
 
-    <%= yield %>
-
+    <div class="page-main">
+      <%= yield %>
+    </div>
+    
     <footer>
       <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
           <nav class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-              <span class="sr-only">顔本</span>
+              <span class="sr-only">インスタもどき</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
