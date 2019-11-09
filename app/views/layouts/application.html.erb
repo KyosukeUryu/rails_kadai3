@@ -16,11 +16,17 @@
         <h1><%= link_to 'This is Insta 「もどき」', root_path, class: 'header-title' %></h1>
       </div>
     </header>
+    <section class="page-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
 
-    <div class="page-main">
-      <%= yield %>
-    </div>
-    
+            <%= yield %>
+
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
       <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">

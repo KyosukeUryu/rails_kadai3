@@ -1,11 +1,9 @@
-<h2>あなたのお気に入り</h2>
-
 <div class="main_contents">
   <% if logged_in? %>
     <ul class="nav nav-tabs nav-justified">
     	<li role="presentation"><%= link_to 'ホーム', root_path %></li>
     	<li role="presentation"><%= link_to '投稿一覧', pictures_path %></li>
-    	<li role="presentation" class="active"><%= link_to 'お気に入り一覧', favor_pictures_pictures_path %></li>
+    	<li role="presentation" class="active"><%= link_to 'あなたのお気に入り一覧', favor_pictures_pictures_path %></li>
     </ul>
     <% @pictures.each do |pic| %>
       <%= image_tag pic.image.url %>
