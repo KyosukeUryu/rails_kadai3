@@ -1,0 +1,9 @@
+.navbar-default {
+  background-color: wheat;
+  border-color: burlywood;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus,
+ .navbar-default .navbar-nav>.open>a:hover {
+   background-color: burlywood;
+ }
