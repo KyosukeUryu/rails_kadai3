@@ -1,6 +1,25 @@
 <h2>みんなの投稿一覧</h2>
 
-<% @pictures.each do |pic| %>
-  <%= image_tag pic.image.url %>
-  <p>内容：<%= pic.content %></p>
-<% end %>
+<div class="main_contents">
+  <% if logged_in? %>
+    <ul class="nav nav-tabs nav-justified">
+    	<li role="presentation"><%= link_to 'ホーム', root_path %></li>
+    	<li role="presentation"  class="active"><%= link_to '投稿一覧', pictures_path %></li>
+    	<li role="presentation"><%= link_to 'お気に入り一覧', favor_pictures_pictures_path %></li>
+    </ul>
+    <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？'} %>
+  <% else %>
+    <div class="jumbotron">
+      <h2>早速<%= link_to 'ログイン', new_session_path %>しよう！</h2>
+      <h2>新規登録がまだの方は<%= link_to 'こちら', new_user_path %></h2>
+      <h3>現在<%= @users.count %>人の方にユーザ登録いただいております！</h3>
+    </div>
+  <% end %>
+
+  <div class="index">
+    <% @pictures.each do |pic| %>
+      <%= image_tag pic.image.url %>
+      <p>内容：<%= pic.content %></p>
+    <% end %>
+  </div>
+</div>
