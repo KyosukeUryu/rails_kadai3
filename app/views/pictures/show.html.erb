@@ -2,6 +2,8 @@
 
 <%= image_tag @picture.image.url %>
 <p>内容：<%= @picture.content %></p>
+<p>投稿者：<%= @picture.user.name %></p>
+<p>投稿日：<%= @picture.created_at.strftime("%Y-%m-%d") %></p>
 
 <% if @picture.user_id != current_user.id %>
   <% if @favorite.present? %>
@@ -10,3 +12,4 @@
     <%= link_to 'お気に入りに追加', favorites_path(picture_id: @picture.id), method: :post, class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+<%= link_to '投稿一覧に戻る', pictures_path, class: 'btn btn-info' %>

@@ -5,7 +5,6 @@
     	<li role="presentation"  class="active"><%= link_to '投稿一覧', pictures_path %></li>
     	<li role="presentation"><%= link_to 'お気に入り一覧', favor_pictures_pictures_path %></li>
     </ul>
-    <%= link_to 'ログアウト', session_path(current_user.id), method: :delete, data: { confirm: 'ログアウトしますか？'} %>
   <% else %>
     <div class="jumbotron">
       <h2>早速<%= link_to 'ログイン', new_session_path %>しよう！</h2>
