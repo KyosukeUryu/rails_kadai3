@@ -27,6 +27,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.update(user_params)
+    redirect_to root_path, info: 'ユーザ情報を更新しました'
   end
 
   private
