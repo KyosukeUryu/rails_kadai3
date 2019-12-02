@@ -22,6 +22,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -29,7 +31,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'letter_opener_web'
-  gem 'dotenv-rails'
 end
 
 group :development do
